@@ -8,7 +8,8 @@ int main()
 	cout << "\nSumm of values = " << val1 + val2 << " \n";
 	cout << "\nDifference of values = " << val1 - val2 << " \n";
 	cout << "\nComposition of values = " << val1 * val2 << " \n";
-	double quotient = val1 / val2;
-	cout << "\nQuotient of values = " << quotient << " \n";
+	double x = val1;
+	double y = val2;
+	cout << "\nQuotient of values = " << x / y << " \n";
 	keep_window_open();
 }
