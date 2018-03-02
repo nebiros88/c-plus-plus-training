@@ -12,8 +12,8 @@ int main()
 	if (val1 > val2) {
 		min = val2;
 		max = val1;
-		cout << "Min = " << min << "Max = " << max << '\n';
 	}
+	cout << "Min = " << min << "Max = " << max << '\n';
 	cout << "\nSumm of values = " << val1 + val2 << " \n";
 	cout << "\nDifference of values = " << val1 - val2 << " \n";
 	cout << "\nComposition of values = " << val1 * val2 << " \n";
