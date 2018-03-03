@@ -7,8 +7,7 @@ int main()
 	cin >> val1 >> val2;
 	double min = val1;
 	double max = val2;
-	double x = val1;
-	double y = val2;
+	
 	if (val1 > val2) {
 		min = val2;
 		max = val1;
@@ -17,6 +16,6 @@ int main()
 	cout << "\nSumm of values = " << val1 + val2 << " \n";
 	cout << "\nDifference of values = " << val1 - val2 << " \n";
 	cout << "\nComposition of values = " << val1 * val2 << " \n";
-	cout << "\nQuotient of values = " << x / y << " \n";
+	cout << "\nQuotient of values = " << val1 / val2 << " \n";
 	keep_window_open();
 }
