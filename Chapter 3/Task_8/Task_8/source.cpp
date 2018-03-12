@@ -11,5 +11,4 @@ int main()
 		cout << "Number " << a << " is even.\n";
 	}
 	keep_window_open();
-	return 0;
 }
