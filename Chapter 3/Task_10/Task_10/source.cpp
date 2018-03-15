@@ -10,17 +10,20 @@ int main()
 	if (operation == "+") {
 		result = a + b;
 	}
-	if (operation == "-") {
-		result = a - b;
-	}
-	if (operation == "*") {
-		result = a * b;
-	}
-	if (operation == "/") {
-		result = a / b;
-	}
 	else {
-		simple_error("Error");
+		if (operation == "-") {
+			result = a - b;
+		}
+		else {
+			if (operation == "*") {
+				result = a * b;
+			}
+			else {
+				if (operation == "/") {
+					result = a / b;
+				}
+			}
+		}
 	}
 	cout << result << "\n";
 	keep_window_open();
