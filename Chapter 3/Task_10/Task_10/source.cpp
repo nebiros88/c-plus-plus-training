@@ -22,6 +22,9 @@ int main()
 				if (operation == "/") {
 					result = a / b;
 				}
+				else {
+					simple_error("Are you kidding");
+				}
 			}
 		}
 	}
