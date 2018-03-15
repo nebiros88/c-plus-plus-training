@@ -7,19 +7,21 @@ int main()
 	cout << "Enter operation and any two operands end press 'Enter'\n";
 	cin >> operation >> a >> b;
 	double result;
-	if () {			// что тут должно быть за условие?
-		if (operation == "+")
-			result = a + b;
-		if (operation == "-")
-			result = a - b;
-		if (operation == "*")
-			result = a * b;
-		if (operation == "/")
-			result = a / b;
-		cout << result << "\n";
+	if (operation == "+") {
+		result = a + b;
+	}
+	if (operation == "-") {
+		result = a - b;
+	}
+	if (operation == "*") {
+		result = a * b;
+	}
+	if (operation == "/") {
+		result = a / b;
 	}
 	else {
 		simple_error("Error");
-		}
+	}
+	cout << result << "\n";
 	keep_window_open();
 }
