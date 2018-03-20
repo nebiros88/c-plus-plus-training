@@ -7,27 +7,15 @@ int main()
 	cout << "Enter operation and any two operands end press 'Enter'\n";
 	cin >> operation >> a >> b;
 	double result;
-	if (operation == "+") {
+	if (operation == "+") 
 		result = a + b;
-	}
-	else {
-		if (operation == "-") {
+	else if (operation == "-") 
 			result = a - b;
-		}
-		else {
-			if (operation == "*") {
+		else if (operation == "*") 
 				result = a * b;
-			}
-			else {
-				if (operation == "/") {
+			else if (operation == "/") 
 					result = a / b;
-				}
-				else {
-					simple_error("Are you kidding");
-				}
-			}
-		}
-	}
+				else simple_error("Are you kidding");
 	cout << result << "\n";
 	keep_window_open();
 }
