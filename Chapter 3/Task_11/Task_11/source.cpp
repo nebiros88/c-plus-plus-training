@@ -1,15 +1,15 @@
 #include "../../../std_lib_facilities.h"
 int main()
 {
-	int a1;
-	int a5;
-	int a10;
-	int a25;
-	int a50;
-	int a100;
-	int summ;
-	int dollar;
-	int cent;
+	int a1 = 0;
+	int a5 = 0;
+	int a10 = 0;
+	int a25 = 0;
+	int a50 = 0;
+	int a100 = 0;
+	int summ = 0;
+	int dollar = 0;
+	int cent = 0;
 	cout << "Please, enter the number of one-cent monets and press 'Enter' \n";
 	cin >> a1;
 	cout <<	"Please, enter the number of five-cent monets and press 'Enter' \n";
@@ -24,15 +24,18 @@ int main()
 	cin >> a100;
 	if (a1 == 1)
 		cout << "You have only " << a1 << " one-cent monet.\n";
-	else
+	else if (a1 > 0)
 		cout << "You have " << a1 << " one-cent monets.\n";
-	cout << "You have " << a5 << " five-cent monets.\n";
-	cout << "You have " << a10 << " ten-cent monets.\n";
-	cout << "You have " << a25 << " twenty-five-cent monets.\n";
-	cout << "You have " << a50 << " fifty-cent monets.\n";
-	cout << "you have " << a100 << " one-dollar monets.\n";
-	if (a100 > 1)
-		a100 = a100 * 100;
+	if (a5 > 0)
+		cout << "You have " << a5 << " five-cent monets.\n";
+	if (a10 > 0)
+		cout << "You have " << a10 << " ten-cent monets.\n";
+	if (a25 > 0)
+		cout << "You have " << a25 << " twenty-five-cent monets.\n";
+	if (a50 > 0)
+		cout << "You have " << a50 << " fifty-cent monets.\n";
+	if (a100 > 0)
+		cout << "you have " << a100 << " one-dollar monets.\n";
 	summ = a1 * 1 + a5 * 5 + a10 * 10 + a25 * 25 + a50 * 50 + a100 * 100;
 	dollar = summ / 100;
 	cent = summ - dollar * 100;
