@@ -43,12 +43,9 @@ int main()
 		cout << "You have only " << a100 << " one-dollar monet.\n";
 	else if (a100 > 0)
 		cout << "you have " << a100 << " one-dollar monets.\n";
-	int summ = 0;
-	int dollar = 0;
-	int cent = 0;
-	summ = a1 * 1 + a5 * 5 + a10 * 10 + a25 * 25 + a50 * 50 + a100 * 100;
-	dollar = summ / 100;
-	cent = summ - dollar * 100;
+	int summ = a1 * 1 + a5 * 5 + a10 * 10 + a25 * 25 + a50 * 50 + a100 * 100;
+	int dollar = summ / 100;
+	int cent = summ - dollar * 100;
 	cout << " There is " << dollar << " dollars and " << cent << " cents.\n";
 	keep_window_open();
 }
