@@ -3,8 +3,7 @@ int main()
 {
 	char i = 'a';
 	while (i <= 'z') {
-		int y = i;
-		cout << i << '\t' << y << "\n";
+		cout << i << '\t' << int (i)  << "\n";
 		++i;
 	}
 	keep_window_open();
