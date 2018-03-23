@@ -7,7 +7,7 @@ int main()
 	double quantity = 0;
 	char currency = ' ';
 	cout << "Please, enter quantity and currency (e - eur, r - rub or p - pound) and press 'Enter'.\n";
-	cin >> quantity >> currency;
+	while (cin >> quantity >> currency)
 	switch (currency) {
 	case 'e' :
 		cout << quantity << " EUR =" << quantity / usd_per_eur << " USD\n";
