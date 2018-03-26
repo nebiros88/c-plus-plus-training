@@ -1,10 +1,6 @@
 #include "../../../std_lib_facilities.h"
 int main()
-{
-	char i = 'a';
-	while (i <= 'z') {
+{	for (char i = 'a'; i <='z'; ++i)
 		cout << i << '\t' << int (i)  << "\n";
-		++i;
-	}
 	keep_window_open();
 }
