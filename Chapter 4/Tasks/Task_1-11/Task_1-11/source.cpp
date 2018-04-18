@@ -1,37 +1,36 @@
 #include "../../../../std_lib_facilities.h"
-bool is_unknown(string unit) {
-	vector<string> unknown = { "yard", "meter", "km", "gallons" };
-	for (int i = 0; i < unknown.size(); ++i)
-		if (unit == unknown[i]) {
+bool units(string unit) {
+	vector<string> units = { "cm", "in", "ft", "m" };
+	for (int i = 0; i < units.size(); ++i)
+		if (unit == units[i]) {
 			return true;
 		}
 	return false;
 }
 int main()
 {
-	constexpr double cm_per_meter = 100;
-	constexpr double cm_per_inches = 2.54;
-	constexpr double in_per_feets = 12;
-	double lenght = 0;
+	double a = 0;
+	double min = 0;
+	double max = 0;
+	int i = 0;
 	string unit;
-	double min;
-	double max;
-	cout << "Please, type any  distance and the unit of distance and press 'Enter'.\n";
-	cin >> lenght >> unit;
-	if (is_unknown(unit)) {
-		cout << "The unknown unit. Please, type the correct value of unit!\n";
-	}
-	min = lenght;
-	max = lenght;
-	cout << min << "\t minimal value.\n";
-	cout << max << "\t maximal value.\n";
-	while (cin >> lenght >> unit) {
-		if (lenght < min) {
-			min = lenght;
+	cout << "Please, type any value of distance and unit and press 'Enter'.\n";
+	while (cin >> a >> unit) {
+		if (units(unit))
+			++i;
+		else cout << "Choose another correct unit.\n";
+		if (i == 1 && units(unit)) {
+			min = a;
+			max = a;
+			cout << min << "\t minimal value.\n";
+			cout << max << "\t maximal value.\n";
+		}
+		else if (a < min && units(unit)) {
+			min = a;
 			cout << min << "\t minimal value.\n";
 		}
-		else if (lenght > max) {
-			max = lenght;
+		else if (a > max && units(unit)) {
+			max = a;
 			cout << max << "\t maximal value.\n";
 		}
 	}
