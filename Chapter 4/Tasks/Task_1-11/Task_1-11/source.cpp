@@ -31,28 +31,25 @@ int main()
 	int i = 0;
 	string unit;
 	double summ = 0;
+	vector<double> values;
 	cout << "Please, type any value of distance and unit and press 'Enter'.\n";
 	while (cin >> a >> unit) {
-		double val = convert(a, unit);
 		if (units(unit)) {
-			++i;
-			if (i == 1) {
-				min = val;
-				max = val;
-			}
-			else if (val < min) {
-				min = val;
-			}
-			else if (val > max) {
-				max = val;
-			}
+			double val = convert(a, unit);
+			values.push_back(val);
 			summ +=val;
 		}
 		else cout << "Not correct!\n";
 	}
-	cout << "You have been typed " << i << " times.\n";
+	cout << "You have been typed " << values.size() << " times.\n";
 	cout << "The distance is " << summ << " meters.\n";
-	cout << min << "\t minimal value.\n";
-	cout << max << "\t maximal value.\n";
+	sort(values);
+	cout << values[1] << "\t minimal value.\n";
+	cout << values[values.size() - 1] << "\t maximal value.\n";
+	cout << "The vector is: ";
+	for (int z: values) {
+			cout << values[z] << " ";
+		}
+	cout << "\n";
 	keep_window_open();
 }
