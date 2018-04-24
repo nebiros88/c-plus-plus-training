@@ -1,39 +1,125 @@
 #include "../../../../std_lib_facilities.h"
+int choise_even (int ans1) {
+	vector<int> numbers;
+	int result;
+	if (ans1 == '1') 
+		for (int i = 0; i < 10 || i % 2 == 0; ++i) {
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	
+	if (ans1 == '2') 
+		for (int i = 10; i < 20 || i % 2 == 0; ++i) {
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '3') 
+		for (int i = 20; i < 30 || i % 2 == 0; ++i) {
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '4') 
+		for (int i = 30; i < 40 || i % 2 == 0; ++i) {
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '5') 
+		for (int i = 40; i < 50 || i % 2 == 0; ++i){
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '6') 
+		for (int i = 50; i < 60 || i % 2 == 0; ++i){
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '7') 
+		for (int i = 60; i < 70 || i % 2 == 0; ++i){
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '8') 
+		for (int i = 70; i < 80 || i % 2 == 0; ++i){
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '9') 
+		for (int i = 80; i < 90 || i % 2 == 0; ++i){
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	if (ans1 == '10') 
+		for (int i = 90; i < 100 || i % 2 == 0; ++i){
+			numbers.push_back(i);
+			result = numbers[i];
+		}
+	return result;
+}
+
+int even(int ans1) {
+	vector<int> numbers;
+	string ans2;
+	int result;
+	choise_even(ans1);
+		cout << "If your number is min or max in this case push yes if not push no.\n";
+		cin >> ans2;
+		if (ans2 == "yes") {
+			cout << "Your numbers is " << numbers[0] << " ?\n";
+			cin >> ans2;
+			if (ans2 == "yes")
+				result = numbers[0];
+			else if (ans2 == "no")
+				cout << "Your numbers is " << numbers[numbers.size()] << " ?\n";
+			cin >> ans2;
+			if (ans2 == "yes")
+				result = numbers[numbers.size()];
+		}
+		else if (ans2 == "no") {
+			cout << "Your number is " << numbers[numbers.size() / 2] << " push  or no?\n";
+			cin >> ans2;
+			if (ans2 == "yes")
+				result = numbers[numbers.size() / 2];
+			if (ans2 == "no") {
+				cout << "Your number is " << numbers[numbers.size() / 2 - 1] << " if no type no?\n";
+				cin >> ans2;
+				if (ans2 == "yes")
+					result = numbers[numbers.size() / 2 - 1];
+				else if (ans2 == "no") {
+					cout << "Your number is " << numbers[numbers.size() / 2 + 1] << "!!!\n";
+					result = numbers[numbers.size() / 2 + 1];
+				}
+			}
+		}
+	}
+	return result;
+}
 int main()
 {
-	int n = 0;
-	string ans = " ";
-	int i = 0;
-	vector<double> mumbers;
-	cout << "Please, make any number from 0 to 100 and press 'Enter'/\n";
-	cout << " Your number less than 50 type yes? if no type no.\n";
+	string ans;
+	int value = 0;
+	int ans1;
+	cout << "Please, make any number from 0 to 100.\n"
+		<< " Your number is even or not? yes/no?.\n";
+	cin >> ans;
 	if (ans == "yes") {
-		cout << "Is your number less than 50 and greater than 40 or equal 40 type yes or now.\n";
-		cin >> ans;
-		if (ans == "yes") {
-			cout << "Is your number is equal?\n";
-			if (ans == "yes") {
-				vector <double> numbers = { 40, 42, 44, 46, 48 };
-			}
-			else vector<double> numbers = { 41, 43, 45, 47, 49 };
-		}
-		else cout << "Your number is less than 40 an greater then 30 oe equal 30?\n";
-		if (ans == "yes") {
-			vector<double> numbers = { 30, 31, 32, 33, 34, 35, 36, 37, 38, 39 };
-		}
-		else cout << "Your number is less than 30 an greater then 20 oe equal 20?\n";
-		if (ans == "yes") {
-			vector<double> number = { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 };
-		}
-		else cout << "Your number is less than 20 an greater then 10 oe equal 10?\n";
-		if (ans == "yes") {
-			vector<double> numbers = { 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 };
-		}
+		cout << "Choose where is your number?\n In case 0-9 push 1\n In case 10-19 push 2\n"
+			<< "In case 20-29 push 3\n In case 30-39 push 4\n In case 40-49 push 5\n"
+			<< "In case 50-59 push 6\n In case 60-69 push 7\n In case 70-79 push 8\n"
+			<< "In case 80-89 push 9\n In case 90-99 push 10\n"
+			<< "If there is no your number beetwen this cases uoer number is 100!\n";
+		cin >> ans1;
+		value = even(ans1);
+		cout << "Your number is " << value << " !!!!!\n";
 	}
-	else
-		
+	else if (ans == "no") {
+		cout << "Choose where is your number?\n In case 0-10 push 1\n In case 10-20 push 2\n"
+			<< "In case 20-30 push 3\n In case 30-40 push 4\n In case 40-50 push 5\n"
+			<< "In case 50-60 push 6\n In case 60-70 push 7\n In case 70-80 push 8\n"
+			<< "In case 80-90 push 9\n In case 90-100 push 10\n"
+			<< "If there is no your number beetwen this cases uoer number is 100!\n";
+		cin >> ans1;
+		value = even(ans1);
+		cout << "Your number is " << value << " !!!!!\n";
 	}
-	
-
-
+	keep_window_open();
 }
