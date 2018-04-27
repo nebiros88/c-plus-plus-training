@@ -126,29 +126,43 @@ int main()
 }*/
 int main() {
 	int n0 = 0;
-	int n1 = 50;
-	int n2 = 100;
-	int n = 0;
+	int n1 = 100;
 	string answer;
 	int i = 0;
-	cout << "Please, make a number in case between 0 and 100. Is your number less or greater than 50?\n";
-	while (cin >> answer && i < 7) {
+	cout << "Please, make a number in case between 0 and 100. Is your number less than " << (n0 + n1) / 2 << "?\n";
+	while (cin >> answer && i < 6) {
 		++i;
-		if (i == 1 && answer == "<") {															// case 0-49
-			cout << "Is your number less or greater than " << (n0 + n1) / 2 << " ?\n";			// <25
-			n1 = (n0 + n1) / 2 - 1;
+		if (i < 5 && answer == "yes") {
+			n1 = (n0 + n1) / 2;
+			cout << "Is your number less than " << n1 / 2 << "?\n";
 		}
-		else if (i == 1 && answer == ">") {														// case 50-100
-			cout << "Is your number less or greater than " << (n1 + n2) / 2 << " ?\n";			// <75
+		else if (i < 5 && answer == "no") {
+			cout << "Is your number less than " << (n0 + n1) / 2 / 2 + (n0 + n1) / 2 << "?\n";
 		}
-		if (answer == "<") {															// case 0-24
-			cout << " Is your number lees or greater than " << (n0 + n1) / 2 << " ?\n";			// <12
-			n1 = (n0 - n1) / 2 - 1;
+		/*if (i != 1 && answer == "yes") {
+			n1 = (n0 + n1) / 2;
+			cout << "Is your number less than " << n1 / 2 << "\n";
+			if (answer == "no") {
+
+			}
 		}
-		else if (answer == ">") {
-			cout << "Is your number less or greater than " << (n1 + n2) / 2 << " ?\n";
+		else if (i != 1 && answer == "no") {
+			n0 = (n0 + n1) / 2 / 2;
+			cout << "Is your number less than " << (n0 + n0 - 1) / 2 << "?\n";
+		}*/
+		if (i == 5 && answer == "yes") cout << "Your number is" << n0 << "?\n";
+		else if (i == 6 && answer == "no") {
+			n1 = n1 / 2 - 1;
+			cout << "Your number is" << n1 << "?\n";
 		}
+		if (i == 5 && answer == "no") {
+			n0 = n1 / 2;
+			cout << "Your number less than " << (n0 + n1 - 1) / 2 << "?\n";
+		}
+		if (i == 6 && answer == "yes") {
+			cout << "Your number is " << n0 << "!\n";
+		}
+		
 	}
-	cout << "Your number is " << n << " !!!!\n";
 	keep_window_open();
 }
