@@ -8,11 +8,12 @@ int main() {
 	int d = (n0 + n1) / 2;
 	cout << "Please, make a number in case between 0 and 100 and if your are ready, type 'yes'.\n";
 	while (cin >> answer && i < 9) {
+		if (answer == "yes" || answer == "no")
 		++i;
 		if (i <= 1) {
 			cout << "Is your number less than " << d  << "?\n";
 		}
-		if (i > 1 && i != 7 && answer == "yes") {
+		if (i > 1 && i < 7 && answer == "yes") {
 			n1 = d;
 			d = (n0 + n1) / 2;
 			cout << "Is your number less than " << d  << "?\n";
@@ -20,7 +21,7 @@ int main() {
 				n0 = d;
 			}
 		}
-		else if (i > 1 && i != 7 && answer == "no") {
+		else if (i > 1 && i < 7 && answer == "no") {
 			n0 = d;
 			d = (n0 + n1) / 2;
 			cout << "Is your number less than " << d << "?\n";
@@ -34,7 +35,7 @@ int main() {
 		if (i == 7 && answer == "no") {
 			cout << "Your number is " << n1 - 1 << " ???\n";
 		}
-		if (i > 7 && answer == "no") {
+		if (i == 8 && answer == "no") {
 			cout << "Your number is " << d << " !!!\n";
 		}
 	}
