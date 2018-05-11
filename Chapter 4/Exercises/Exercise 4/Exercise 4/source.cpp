@@ -10,13 +10,9 @@ int main() {
 	while (cin >> answer && n1 != n0 + 2) {
 		if (answer == "yes" || answer == "no")
 			++i;
-		if (i == 1) {
-			cout << "Is your number less than " << d << "?\n";
-		}
 		if (i > 1 && n1 != n0 + 2 && answer == "yes") {
 			n1 = d - 1;
 			d = (n0 + n1 + 1) / 2;
-			cout << "Is your number less than " << d << "?\n";
 			if (n1 == d) {
 				n0 = d;
 			}
@@ -24,11 +20,11 @@ int main() {
 		else if (i > 1 && n1 != n0 + 2 && answer == "no") {
 			n0 = d;
 			d = (n0 + n1) / 2;
-			cout << "Is your number less than " << d << "?\n";
 			if (n0 == d) {
 				n1 = d;
 			}
 		}
+		cout << "Is your number less than " << d << "?\n";
 	}
 	if (n1 == n0 + 2 && answer == "yes") {
 		cout << "Your number is " << d - 1 << " !\n";
