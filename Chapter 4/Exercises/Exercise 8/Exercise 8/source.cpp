@@ -1,5 +1,5 @@
 #include "../../../../std_lib_facilities.h"
-int is_calculate(double wish_grains) {
+int recell(double wish_grains) {
 	int i = 0;
 	while (wish_grains >= 1) {
 		++i;
@@ -25,7 +25,7 @@ int main()
 	}
 	cout << "Please make number of grains your need and press 'Enter' and you will know how many cells you will need.\n";
 	while (cin >> wish_grains) {
-		cout << "The number of cell you will have to put your grains is " << is_calculate(wish_grains) << " cells.\n";
+		cout << "The number of cell you will have to put your grains is " << recell(wish_grains) << " cells.\n";
 	}
 keep_window_open();
 }
