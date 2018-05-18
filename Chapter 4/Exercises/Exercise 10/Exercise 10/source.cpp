@@ -1,10 +1,16 @@
 #include "../../../../std_lib_facilities.h"
 bool game(char hum) {
+	int summ_pc = 0;
+	int summ_hum = 0;
 	vector<char> ai = { 'r', 's', 'p', 'p', 'r', 's', 's', 'r', 'r', 'p' };
-	int comparsion_pc = ' ';
-	int comparsion_hum = ' ';
-
-
+	for (int i = 0; i < ai.size(); ++i) {
+		cout << "Artifical intelligance choose " << ai[i] << "and you choose " << hum << ".\n";
+		if (ai[i] == hum) {
+			summ_pc += 1;
+			summ_hum += 1;
+		}
+	}
+	
 }
 int main()
 {
