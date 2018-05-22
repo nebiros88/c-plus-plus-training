@@ -1,53 +1,50 @@
 #include "../../../../std_lib_facilities.h"
-int game(char hum) {
-	int summ_pc = 0;
-	int summ_hum = 0;
-	vector<char> ai = { 'r', 's', 'p', 'p', 'r', 's', 's', 'r', 'r', 'p' };
-	vector<char> human(10);
-	for (char hum; cin >> hum;) {
-		human.push_back(hum);
-	}
-	for (int i = 0; i < ai.size();) {
-		++i;
-		cout << "Artifical intelligance choose " << ai[i] << " and you choose " << human[i] << ".\n";
-		if (ai[i] == human[i]) {
-			summ_pc += 1;
-			summ_hum += 1;
-		}
-		if (ai[i] == 'r' || human[i] == 's' && ai[i] == 'p' || human[i] == 'r' && ai[i] == 's' || human[i] == 'p') {
-			summ_pc += 1;
-		}
-		else if (ai[i] == 's' || human[i] == 'r' && ai[i] == 'r' || human[i] == 'p' && ai[i] == 'p' || human[i] == 's') {
-			summ_hum += 1;
-		}
-	}	
-	if (summ_pc > 5) {
-		return 1;
-	}
-	if (summ_hum > 5) {
-		return 2;
-	}
-	else if (summ_pc == summ_hum) {
-		return 3;
-	}
-}
 int main()
 {
-	int i = 0;
-	char hum = ' ';
-	cout << "Ok, let's play a game 'Rock - Scissors - Paper'. You should make on of them and type by keebord first letter and press 'Enter'/\n";
-	for (i < 11; ++i;) {
-		cin >> hum;
-		game(hum);
+	char result = ' ';
+	char pc = 0;
+	char person = 0;
+	vector<char> human (10);
+	vector<char> ai = { 'r', 's', 'p', 'p', 's', 'r', 's', 's', 'p', 'r' };
+	cout << "Ok, let's play a game 'Rock - Scissors - Paper'. Press any ten values and press 'Enter'.\n";
+	for (char hum; cin >> hum;)
+	human.push_back(hum);
+	for (int i = 0; i < human.size(); ++i) {
+		for (int z = 0; z < ai.size(); ++z) {
+			if (ai[i] == human[i]) {
+				result = 0;
+			}
+			else if (ai[z] == 'r' || human[i] == 's' && ai[z] == 'p' || human[i] == 'r' && ai[z] == 's' || human[i] == 'p') {
+				result = 1;
+			}
+			else if (ai[z] == 's' || human[i] == 'r' && ai[z] == 'r' || human[i] == 'p' && ai[z] == 'p' || human[i] == 's') {
+				result = 2;
+			}
+			switch (result) {
+			case '0' :
+				pc += 1;
+				person += 1;
+				break;
+			case '1' :
+				pc += 1;
+				break;
+			case '2' :
+				person += 1;
+				break;
+			default :
+				cout << "Not correct!\n";
+			}
+			cout << "PC choise is " << ai[z] << " and your choise is " << human[i] << ".\n";
+		}
 	}
-	if (game(hum) == 2) {
-		cout << "You're loose!\n";
+	if (pc > person) {
+		cout << " You are looser!\n";
 	}
-	else if (game(hum) == 1) {
-		cout << "You winn, congratulations!\n";
+	else if (pc < person) {
+		cout << "You WINN!!!\n";
 	}
-	if (game(hum) == 3) {
-		cout << "Try again! There are no winners and loosers)\n";
+	else if (pc == person) {
+		cout << "There are no luckers(\n";
 	}
 	keep_window_open();
 }
