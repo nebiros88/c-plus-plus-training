@@ -7,16 +7,18 @@ int main()
 	cout << "Please, enter maximal value.\n";
 	cin >> max;
 	for (int i = 0; i <= max; ++i) {
-		primes[0] = i;
-		for (int y = 2; y * y <= max; ++i) {
-			if (primes[i] != 0) {
-				for (int a = y * y; a <= max; ++a) {
-					primes[a] = 0;
-					if (primes[i] != 0) {
-						primes.push_back(primes[i]);
-					}
+		primes[i] = i;
+		for (int j = 2; j < max; ++j) {
+			primes[j] = 0;
+			if (primes[j] != 0) {
+				for (int k = j * j; k < max; ++k) {
+					primes[k] = 0;
 				}
 			}
 		}
+		if (primes[i] != 0) {
+			cout << primes[i] << "\t";
+		}
 	}
+	keep_window_open();
 }
