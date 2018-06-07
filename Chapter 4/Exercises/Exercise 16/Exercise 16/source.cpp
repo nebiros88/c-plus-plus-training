@@ -4,8 +4,7 @@ int main()
 	vector<int> numbers;
 	vector<int> times;
 	int k = 1;
-	int b = 0;
-	int c = 0;
+	int moda = 0;
 	cout << "Any numbers.\n";
 	for (int num; cin >> num;) {
 		numbers.push_back(num);
@@ -27,15 +26,13 @@ int main()
 		cout << times[j] << "\t";
 	}
 	cout << "\n";
-	for (int i = 0; i < numbers.size(); ++i) {
-		c = times[i];
-		for (int j = i; j < times.size(); ++j) {
-			b = times[j];
-			sort(times);
-			if (b == times[times.size() - 1]) {
-				cout << c;
-			}
+	moda = times[0];
+	for (int i = 1; i < times.size(); ++i) {
+		if (moda < times[i]) {
+			k = i;
+			moda = times[i];
 		}
 	}
+	cout << numbers[k] << " this numbers is MODA.\n";
 	keep_window_open();
 }
