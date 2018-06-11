@@ -4,25 +4,27 @@ int main()
 	vector<string> names;
 	vector<double> scores;
 	string name;
-	double score;
+	double score = ' ';
 	int k = 0;
+	int x = 0;
 	cout << "Enter the name ant the age.\n";
-	while (name != "noname" || score != 0) {
-		cin >> name >> score;
+	cin >> name >> score;
+	while (name != "noname" && score != 0) {
 		names.push_back(name);
 		scores.push_back(score);
+		cin >> name >> score;
 	}
 	for (int i = 0; i < names.size(); ++i) {
-		for (int j = 1; j < names.size(); ++j) {
+		for (int j = i + 1; j < names.size(); ++j) {
 			if (names[i] == names[j]) {
 				++k;
 			}
 		}
 	}
-	if (k >= 1) {
-		cout << "There are "<< k << " similar words.\n";
+	if (k > 0) {
+		cout << "There are similar words.\n";
 	}
-	else  if (k < 1) {
+	if (k == 0) {
 		for (int i = 0; i < names.size(); ++i) {
 			cout << names[i] << "\t" << scores[i] << "\n";
 		}
