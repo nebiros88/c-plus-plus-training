@@ -1,5 +1,6 @@
 #include "../../../../std_lib_facilities.h"
 int main()
+try
 {
 	int n = 0;
 	vector<int> integers;
@@ -10,6 +11,7 @@ int main()
 	for (int val; cin >> val;) {
 		integers.push_back(val);
 	}
+	if (n > integers.size()) error("The vector size is smaller than your number of summable values!");
 	for (int i = 0; i < n; ++i) {
 		summ += integers[i];
 	}
@@ -18,6 +20,11 @@ int main()
 		cout << integers[i] << " , ";
 	}
 	cout << ") is " << summ << '\n';
+	keep_window_open();
+	keep_window_open();
+}
+catch (runtime_error & e) {
+	cerr << e.what() << '\n';
 	keep_window_open();
 	keep_window_open();
 }
