@@ -3,31 +3,29 @@ int main()
 try
 {
 	int n = 0;
-	vector<double> integers;
+	vector<double> values;
 	int summ = 0;
+	vector<double> diffs;
 	cout << "Enter the number of summable values and press 'Enter'.\n";
 	cin >> n;
 	cout << "Enter any integers (| - for ending input).\n";
 	for (double val; cin >> val;) {
-		integers.push_back(val);
+		values.push_back(val);
 	}
-	if (n > integers.size()) error("The vector size is smaller than your number of summable values!");
+	if (n > values.size()) error("The vector size is smaller than your number of summable values!");
 	for (int i = 0; i < n; ++i) {
-		summ += integers[i];
+		summ += values[i];
+		if (i < n - 1){
+			diffs.push_back(values[i + 1] - values[i]);
+		}
 	}
 	cout << "Summ of first " << n << " values (";
 	for (int i = 0; i < n; ++i) {
-		cout << integers[i] << " , ";
+		cout << values[i] << " , ";
 	}
 	cout << ") is " << summ << '\n';
-	for (int i = 0; i < integers.size(); ++i) {
-		if (i == 0) {
-			cout << integers[i] << '\t';
-		}
-		if (i > 0) {
-			cout << integers[i] - integers[i - 1] << '\t';
-		}
-	}
+	for (double valid : diffs) cout << valid << '\t';
+	cout << '\n';
 	keep_window_open();
 	keep_window_open();
 }
