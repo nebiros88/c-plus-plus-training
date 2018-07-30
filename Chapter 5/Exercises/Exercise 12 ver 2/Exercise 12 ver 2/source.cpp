@@ -19,7 +19,7 @@ try
 		n1 = n % 10;
 		n /= 10;
 	}
-	if (answers.size() < 4 || answers.size() > 4) error("Not correct numbers of numbers!\n");
+	if (answers.size() != 4) error("Not correct numbers of numbers!\n");
 	return revers(answers);
 }
 catch (runtime_error & e) {
@@ -53,7 +53,7 @@ try
 				}
 		}
 		cout << bools << " bools " << cows << " cows\n";
-		if (bools == 4) result = true;
+		result = bools == 4;
 	}
 	cout << "You are winnwe!\n";
 	keep_window_open();
