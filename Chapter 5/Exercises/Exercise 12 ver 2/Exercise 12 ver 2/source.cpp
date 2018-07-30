@@ -8,15 +8,24 @@ vector<int> revers(vector<int> answers)
 	return my_vector;
 }
 vector<int> digits_search(int answer)
+try
 {
 	int n = answer;
 	vector<int> answers;
+	int n1 = '..';
 	while (n != 0) {
+		if (n1 == n % 10) error("The near values should not repeated!\n");
 		answers.push_back(n % 10);
+		n1 = n % 10;
 		n /= 10;
 	}
 	if (answers.size() < 4 || answers.size() > 4) error("Not correct numbers of numbers!\n");
 	return revers(answers);
+}
+catch (runtime_error & e) {
+	cerr << e.what() << '\n';
+	keep_window_open();
+	keep_window_open();
 }
 int main()
 try
