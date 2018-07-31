@@ -12,11 +12,11 @@ try
 {
 	int n = answer;
 	vector<int> answers;
-	int n1 = '..';
 	while (n != 0) {
-		if (n1 == n % 10) error("The near values should not repeated!\n");
+		for (int k = 0; k < answers.size(); ++k) {
+			if (answers.size() > 1 && n % 10 == answers[k]) error("The near values should not repeated!\n");
+		}
 		answers.push_back(n % 10);
-		n1 = n % 10;
 		n /= 10;
 	}
 	if (answers.size() != 4) error("Not correct numbers of numbers!\n");
