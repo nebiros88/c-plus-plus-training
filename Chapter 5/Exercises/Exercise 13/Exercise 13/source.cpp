@@ -14,7 +14,7 @@ try
 	vector<int> answers;
 	while (n != 0) {
 		for (int k = 0; k < answers.size(); ++k) {
-			if (answers.size() > 1 && n % 10 == answers[k]) error("The near values should not repeated!\n");
+			if (n % 10 == answers[k]) error("The near values should not repeated!\n");
 		}
 		answers.push_back(n % 10);
 		n /= 10;
@@ -33,8 +33,9 @@ try
 	string man_choise = "..";
 	while (man_choise != "no") {
 		cout << "Hello! If you want to play the game, enter 'yes' if no, enter 'no' or to stop the game enter 'no'?\n";
-		cin >> man_choise;
-		if (man_choise != "yes" && man_choise != "no") error("Only yes or no!\n");
+		while (!(cin >> man_choise) && man_choise != "yes"  && man_choise != "no") {
+			cout << "Only yes or no!\n";
+		}
 		if (man_choise == "yes") {
 			vector<int> values;
 			bool result = false;
