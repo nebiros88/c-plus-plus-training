@@ -32,14 +32,15 @@ try
 {
 	string man_choise = "..";
 	while (man_choise != "no") {
-		cout << "Hello! If you want to play a game enter 'yes' if no, enter 'no' or to stop the game enter 'no'?\n";
+		cout << "Hello! If you want to play the game, enter 'yes' if no, enter 'no' or to stop the game enter 'no'?\n";
 		cin >> man_choise;
+		if (man_choise != "yes" && man_choise != "no") error("Only yes or no!\n");
 		if (man_choise == "yes") {
 			vector<int> values;
 			bool result = false;
 			int answer = 0;
 			int n = 0;
-			cout << "Please, enter any valuse from 0 to 9 for fillnig the vector by the PC ande press 'Enter'.\n";
+			cout << "Please, enter any values from 0 to 9 for fillnig the vector by the PC and press 'Enter'.\n";
 			cin >> n;
 			srand(n);
 			for (int i = 0; i < 4; ++i) {
@@ -67,7 +68,7 @@ try
 				cout << bools << " bools " << cows << " cows\n";
 				result = bools == 4;
 			}
-			cout << "You are winnwe!\n";
+			cout << "You are winner!\n";
 			keep_window_open();
 		}
 	}
