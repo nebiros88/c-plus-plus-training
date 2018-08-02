@@ -1,4 +1,20 @@
 #include "../../../../std_lib_facilities.h"
+bool are_the_same(string day)
+{
+	vector<string> day_names = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "mon", "tue", "wed", "thu", "fri", "sat", "sun" };
+	string val = day;
+	int res = 0;
+	for (int i = 0; i < day_names.size(); ++i) {
+		if (val == day_names[i]) {
+			++res;
+		}
+	}
+	if (res > 0) {
+		return true;
+	}
+	else return false;
+
+}
 int main()
 {
 	vector<int> monday;
@@ -8,7 +24,6 @@ int main()
 	vector<int> friday;
 	vector<int> saturday;
 	vector<int> sunday;
-	vector<string> day_names = { "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday", "mon", "tue", "wed", "thu", "fri", "sat", "sun" };
 	int summ_monday = 0;
 	int summ_tuesday = 0;
 	int summ_wednesday = 0;
@@ -42,8 +57,9 @@ int main()
 		if (day == "sunday" || day == "sun") {
 			sunday.push_back(val);
 		}
-		for (int i = 0; i < day_names.size(); ++i) {
-
+		if (!are_the_same(day)) {
+			++summ_errors;
+			cout << "Incorrect day name!\n";
 		}
 	}
 	cout << "Monday (";
