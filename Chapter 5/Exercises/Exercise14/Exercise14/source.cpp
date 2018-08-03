@@ -18,6 +18,13 @@ int summ(vector<int>day)
 	}
 	return summ;
 }
+int vector_values(vector<int>day) {
+	int val = 0;
+	for (int i = 0; i < day.size(); ++i) {
+		val = day[i];
+		return val;
+	}
+}
 int main()
 {
 	vector<int> monday;
@@ -58,41 +65,13 @@ int main()
 			cout << "Incorrect day name!\n";
 		}
 	}
-	cout << "Monday (";
-	for (int i = 0; i < monday.size(); ++i) {
-		cout << monday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(monday) << '\n';
-	cout << "Tuesday (";
-	for (int i = 0; i < tuesday.size(); ++i) {
-		cout << tuesday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(tuesday) << '\n';
-	cout << "Wednesday (";
-	for (int i = 0; i < wednesday.size(); ++i) {
-		cout << wednesday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(wednesday) << '\n';
-	cout << "Thursday (";
-	for (int i = 0; i < thursday.size(); ++i) {
-		cout << thursday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(thursday) << '\n';
-	cout << "Friday (";
-	for (int i = 0; i < friday.size(); ++i) {
-		cout << friday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(friday) << '\n';
-	cout << "Saturday (";
-	for (int i = 0; i < saturday.size(); ++i) {
-		cout << saturday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(saturday) << '\n';
-	cout << "Sunday (";
-	for (int i = 0; i < sunday.size(); ++i) {
-		cout << sunday[i] << '\t';
-	}
-	cout << ") Summ is " << summ(sunday) << '\n';
+	cout << "Monday (" << vector_values(monday) << '\t' << ") Summ is " << summ(monday) << '\n';
+	cout << "Tuesday ("<< vector_values(tuesday) << '\t' << ") Summ is " << summ(tuesday) << '\n';
+	cout << "Wednesday (" << vector_values(wednesday) << '\t' << ") Summ is " << summ(wednesday) << '\n';
+	cout << "Thursday (" << vector_values(thursday) << '\t' << ") Summ is " << summ(thursday) << '\n';
+	cout << "Friday (" << vector_values(friday) << '\t' << ") Summ is " << summ(friday) << '\n';
+	cout << "Saturday (" << vector_values(saturday) << '\t' << ") Summ is " << summ(saturday) << '\n';
+	cout << "Sunday (" << vector_values(sunday) << '\t' << ") Summ is " << summ(sunday) << '\n';
 	cout << "You enter " << summ_errors << " incorrect names of days!\n";
 	keep_window_open();
 	keep_window_open();
